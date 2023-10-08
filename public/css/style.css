@@ -1,7 +1,9 @@
 :root {
   --glow-color: hsl(186 100% 69%);
 }
-
+body{
+  background-color: #000000;
+}
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
@@ -27,17 +29,6 @@ a:hover{
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
-}
-.bg-img-1{
-  background-image: url("/images/young-girl-in-virtual-reality-glasses-at-home-2023-03-31-23-20-13-utc.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
 }
 .glow {
   color: #fff;
@@ -212,6 +203,7 @@ a:hover{
   width: 4px;
   -webkit-animation: left 8s linear infinite;
 }
+
 @-webkit-keyframes left{
   0%  {height: 0; top: 100%; left: 0;}
   20% {height: 100%; top: 0; left: 0;}

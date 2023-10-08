@@ -18,7 +18,7 @@
 
 <body class="position-relative" style="width: 100%;height:100%">
 
-<header class="position-relative z-1 border border-0">
+<header class="position-fixed z-1 border border-0" style="width: 100%;">
   <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand glow fs-2 m-2 mt-4" href="/">TECH BLOG</a>
@@ -46,7 +46,7 @@
           <a class="nav-link active text-white fs-4 fw-semibold neon-button-blue text-space mt-4 mr-4" aria-current="page" href="/dashboard">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-white  " aria-current="page" href="#"> <button class="no-button fw-semibold neon-button-blue text-space mt-4 fs-4" id="logout" style="text-decoration: none;">Logout</button></a>
+          <a class="nav-link active text-white fw-semibold neon-button-blue text-space mt-4 fs-4 " id="logout" style="text-decoration: none;" aria-current="page" href="/">Logout</a>
         </li>
         {{else}}
         <li class="nav-item mr-3">
@@ -63,8 +63,24 @@
 
 
 </header>
-<div class="bg-img-1"></div>
-<div class="position-relative" style="height: 80px;"></div>
+<div id="carouselExampleAutoplaying" class="carousel-fade position-fixed" data-bs-ride="carousel" data-bs-pause="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active " data-bs-interval="10000">
+      <img src="/images/young-girl-in-virtual-reality-glasses-at-home-2023-03-31-23-20-13-utc.jpg" class="d-block " alt="..." style="height: 100vh;width:100vw;object-fit:cover">
+    </div>
+    <div class="carousel-item" data-bs-interval="10000">
+      <img src="/images/the-guy-puts-on-green-headphones-and-plays-and-vid-2021-12-15-19-48-44-utc.jpg" class="d-block " alt="..." style="height: 100vh;width:100vw;object-fit:cover">
+    </div>
+    <div class="carousel-item" data-bs-interval="10000">
+      <img src="/images/gamer-futuristic-cyber-neurology-concept-colorful-2022-02-22-05-05-59-utc.jpg" class="d-block" alt="..." style="height: 100vh;width:100vw;object-fit:cover">
+    </div>
+  </div>
+</div>
+{{!-- <div class="bg-img-1 "></div>
+<div class="bg-img-2 "></div>
+<div class="bg-img-3 "></div> --}}
+
+<div class="position-relative" style="height: 20vh;"></div>
 
 
   {{!-- <div class="flex-column justify-space-around"> --}}
