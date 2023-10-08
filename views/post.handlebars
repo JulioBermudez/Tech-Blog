@@ -1,8 +1,19 @@
-<div class="text-center">
+{{!-- <div class="text-center position-relative">
   <h2>{{title}}</h2>
   
   <p>{{content}}</p>
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
-</div>
+</div> --}}
 
 
+ <div class="col-10  text-white light-card">
+    <header class=" p-2 border-0 text-center">
+      <h2>{{title}}</h2>
+    </header>
+    <article class="p-2">
+       <p>{{content}}</p>
+    </article>
+    <footer class="p-2  text-end">
+       <p>Created by {{user.username}} on {{format_date date_created}}</p>
+    </footer>
+  </div>

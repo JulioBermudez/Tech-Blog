@@ -1,16 +1,16 @@
 <div class='row'>
-  <div class='col-auto'>
-    <h2>Welcome {{username}} to Tech post</h2>
+  <div class='col-auto text-white'>
+    <h2>Welcome <span class="text-danger">{{username}} </span>to Tech post</h2>
   </div>
 </div>
 
-<div class='row mt-4'>
+<div class='row mt-4 light-card p-4 text-white'>
   <div class='col-md-6'>
     <h3>Create a New post:</h3>
 
     <form class='form new-post-form'>
       <div class='form-group'>
-        <label for='post-title'>post Title:</label>
+        <label for='post-title'>Blog Title:</label>
         <input
           class='form-input'
           type='text'
@@ -26,8 +26,8 @@
           name='post-cont'
         ></textarea>
       </div>
-      <div class='form-group'>
-        <button type='submit' class='btn btn-primary'>Create</button>
+      <div class='form-group mt-4'>
+        <button type='submit' class='btn btn-primary  neon-button-blue'>Create</button>
       </div>
     </form>
   </div>
@@ -37,13 +37,13 @@
       <h3>Current posts:</h3>
 
       {{#each posts as |post|}}
-        <div class='row mb-2'>
+        <div class='row mb-2 '>
           <div class='col-md-8'>
-            <h4><a href='/post/{{post.id}}'>{{post.title}}</a></h4>
+            <h4><a href='/post/{{post.id}}' class="text-danger">{{post.title}}</a></h4>
           </div>
           <div class='col-md-4'>
             <button
-              class='btn btn-sm btn-danger'
+              class='btn btn-sm neon-button'
               data-id='{{post.id}}'
             >DELETE</button>
           </div>
