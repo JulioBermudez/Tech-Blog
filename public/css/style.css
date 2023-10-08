@@ -201,19 +201,19 @@ a:hover{
 }
 .left{
   width: 4px;
-  -webkit-animation: left 8s linear infinite;
+  animation: left 8s linear infinite;
 }
 
-@-webkit-keyframes left{
+@keyframes left{
   0%  {height: 0; top: 100%; left: 0;}
   20% {height: 100%; top: 0; left: 0;}
   40% {height: 0; top: 0; left: 0;}
 }
 .top{
   height: 4px;
-  -webkit-animation: top 8s linear infinite;
+  animation: top 8s linear infinite;
 }
-@-webkit-keyframes top{
+@keyframes top{
   0%  {width: 0; top: 0; left: 0;}
   20% {width: 0; top: 0; left: 0;}
   40% {width: 100%; top: 0; left: 0;}
@@ -221,9 +221,9 @@ a:hover{
 }
 .right{
   width: 4px;
-  -webkit-animation: right 8s linear infinite;
+  animation: right 8s linear infinite;
 }
-@-webkit-keyframes right{
+@keyframes right{
   0%  {height: 0; top: 0; left: 100%;}
   40% {height: 0; top: 0; left: 100%;}
   60% {height: 100%; top: 0; left: 100%;}
@@ -231,9 +231,9 @@ a:hover{
 }
 .bottom{
   height: 4px;
-  -webkit-animation: bottom 8s linear infinite;
+  animation: bottom 8s linear infinite;
 }
-@-webkit-keyframes bottom{
+@keyframes bottom{
   0%  {width: 0; top: 100%; left: 100%;}
   60% {width: 0; top: 100%; left: 100%;}
   80% {width: 100%; top:100%; left: 0px;}
