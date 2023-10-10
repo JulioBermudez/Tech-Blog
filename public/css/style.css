@@ -10,6 +10,14 @@ header, .project:not(:last-child) {
 a:hover{
   text-decoration: none;
 }
+@font-face {
+  font-family: "neon";
+  src: url("/fonts/NEONLIGHT-Display.otf");
+}
+.neon-text{
+  font-family: 'neon';
+  letter-spacing: 10px;
+}
 .no-button {
   background: none;
   border: none;
@@ -31,6 +39,7 @@ a:hover{
   margin-left: -5px;
 }
 .glow {
+  position: relative;
   color: #fff;
   text-align: center;
   animation: glow 1s ease-in-out infinite alternate;
@@ -45,7 +54,7 @@ a:hover{
   text-decoration: none;
   border: #e60073 0.125em solid;
   padding: 0.25em 1em;
-  border-radius: 0.25em;
+  border-radius: 0.45em;
   text-shadow: 
   0 0 0.125em hsl(0 0% 100% / 0.3),
   0 0 0.125em #e60073;
@@ -96,14 +105,24 @@ a:hover{
 .neon-button:focus::after,.neon-button-blue:hover::after,.neon-button-blue:focus::after{
   opacity: 1;
 }
-.neon-button-blue{
+.neon-button-blue,.neon-button-blue1{
+  font-family: "Raleway", sans-serif;
   color: var(--glow-color)!important;
-  border: var(--glow-color) 0.125em solid;
+  border: 0.15em solid var(--glow-color);
   text-shadow: 
   0 0 0.125em hsl(0 0% 100% / 0.3),
   0 0 0.125em var(--glow-color);
-  box-shadow: inset 0 0 0.5em 0 var(--glow-color), 0 0 0.5em 0 var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 3s linear infinite;
   position: relative;
+}
+.animation-delay{
+  animation: border-flicker 3.8s linear infinite;
 }
 .neon-button-blue::before{
   background-color: var(--glow-color);
@@ -115,6 +134,9 @@ a:hover{
   0 0 0.125em hsl(0 0% 100% / 0.3),
   0 0 0.125em var(--glow-color);
 }
+.text-delay{
+  animation: text-flicker 5s linear infinite;
+}
 /* ------ */
 .light-card{
   position: relative;
@@ -122,30 +144,12 @@ a:hover{
   color: #666;
   transition: .8s;
   border-radius: 0.5em;
+ 
 }
-.light-card:before {
-  content: '';
-  position: absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  border: radius 0.5em;;
-  background: #d35400;
-  transition: .8s;
-  transform: scale(.9);
-  z-index: -1;
-}
-
-.light-card:hover:before {
-  transform: scale(1.2);
-  box-shadow: 0 0 15px #d35400;
-  filter: blur(3px);
-}
-
-.light-card:hover {
-  color: #ffa502;
-  box-shadow: 0 0 15px #d35400;
+.light-card:hover{
+  box-shadow:  #d35400 0px 2px 4px,  #d35400 0px 7px 13px -3px,  #d35400 0px -3px 0px inset;
+  transition: 0.8s;
+  color:  #d35400;
   text-shadow: 0 0 15px #d35400;
 }
 /* ------ */
@@ -153,6 +157,9 @@ a:hover{
 .faulty-letter {
   opacity: 0.5;
   animation: faulty-flicker 2s linear infinite;
+}
+.faulty-letter-delay{
+  animation: faulty-flicker 9s linear infinite;
 }
 .glowing-btn,.glowing-btn::after {
   position: relative;
@@ -163,31 +170,36 @@ a:hover{
   border-radius: 0.45em;
   background: none;
   perspective: 2em;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif;
   font-size: 1.2em;
-  font-weight: 900;
+  font-weight: 900; */
   letter-spacing: 1em;
 
-  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
     0px 0px 0.5em 0px var(--glow-color);
-  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
     0px 0px 0.5em 0px var(--glow-color);
   box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
     0px 0px 0.5em 0px var(--glow-color);
   animation: border-flicker 2s linear infinite;
 }
 .glowing-txt {
-  padding-top: 5px;
+  /* padding-top: 5px;
   padding-bottom: 5px;
   float: left;
-  margin-right: -0.8em;
-  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+  margin-right: -0.8em; */
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
     0 0 0.45em var(--glow-color);
-  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
     0 0 0.45em var(--glow-color);
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
   animation: text-flicker 3s linear infinite;
 }
+.carousel-item {
+  transition: transform 2.5s ease-in-out;
+  filter: opacity(0.5)
+}
+
 
 /* --------------- */
 .bar{
@@ -355,4 +367,7 @@ a:hover{
     text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
-
+.position-letter{
+  position: absolute;
+  transform: rotate(90deg);
+}
