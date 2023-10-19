@@ -21,10 +21,10 @@ const newFormHandler = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
+const ButtonHandler = async (event) => {
+  //DELETE
+  if (event.target.hasAttribute('data-delete')) {
     const id = event.target.getAttribute('data-id');
-
     const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
     });
@@ -35,6 +35,19 @@ const delButtonHandler = async (event) => {
       alert('Failed to delete post');
     }
   }
+  //EDIT PATH
+  if (event.target.hasAttribute('data-edit')) {
+    const id = event.target.getAttribute('data-id');
+    const response = await fetch(`/api/posts/${id}`, {
+      method: 'GET',
+    });
+    if (response.ok) {
+      document.location.replace('/edit');
+    } else {
+      alert('Failed to edit post');
+    }
+  }
+
 };
 
 
@@ -44,7 +57,7 @@ document
 
 document
   .querySelector('.post-list')
-  .addEventListener('click', delButtonHandler);
+  .addEventListener('click', ButtonHandler);
 
 
   

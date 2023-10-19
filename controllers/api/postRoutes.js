@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post,User } = require('../../models');
+const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -35,9 +35,8 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-
 //http://localhost:3001/api/posts/
-router.get("/", withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [
@@ -52,5 +51,25 @@ router.get("/", withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-})
+});
+//http://localhost:3001/api/posts/:id
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const id = req.params.id;
+    const postData = await Post.findByPk({
+      id,
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
